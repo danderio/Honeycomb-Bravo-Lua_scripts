@@ -143,7 +143,7 @@ function toggle_3()
 
 	--Auto Pilot lights check !
 
-	if logic.And(currentToggleSwitches, 0x40) ~= 0 then --switch is off
+	if isToggleState(toggle_3_Off)  then --switch is off
 		BravoLEDs.Off_LED_HEADING()
 		send_To_Bravo()
 
@@ -200,7 +200,7 @@ function toggle_4()
 
 	-- Fun with landing gear lights!
 
-	if logic.And(currentToggleSwitches, 0x80) ~= 0 then --switch is On
+	if isToggleState(toggle_4_On) then --switch is On
 		
 		BravoLEDs.On_LED_LEFT_GEAR_GREEN()
 		send_To_Bravo()
